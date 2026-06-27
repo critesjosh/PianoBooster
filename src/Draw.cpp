@@ -408,7 +408,7 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor colo
     {
         if (!solidNoteHead)
             noteWidth += 1.0f;
-        glLineWidth(2.0f);
+        glLineWidth(4.0f);
         glBegin(GL_LINE_STRIP);
             glVertex2f(noteWidth + x,  0.0f + y); // 1
             glVertex2f(noteWidth + x, stemLength + y); // 2
@@ -447,8 +447,8 @@ bool CDraw::drawNote(CSymbol* symbol, float x, float y, CSlot* slot, CColor colo
     }
     else
     {
-        glLineWidth(2.0);
-        glBegin(GL_LINE_STRIP);
+        glLineWidth(5.0);
+        glBegin(GL_LINE_LOOP);
             glVertex2f(-7.0f + x,  2.0f + y); // 1
             glVertex2f(-5.0f + x,  4.0f + y); // 2
             glVertex2f(-1.0f + x,  6.0f + y); // 3
