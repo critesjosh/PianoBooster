@@ -133,7 +133,7 @@ void CScore::drawPianoKeyboard(){
             float xKeySize = this->xKeySize / 1.5f;
 
             CDraw::drColor (CColor(0.0, 0.0, 0.0));
-            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::playedGoodColor());
             if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
             glVertex2f(0, yBlackSize);
@@ -151,10 +151,20 @@ void CScore::drawPianoKeyboard(){
             glScalef(1.0f, 1.4f, 1.0f);
             glTranslatef(Cfg::staveStartX() + xPlaceSize * static_cast<float>(i++), yStart, 0.0f);
 
-            CDraw::drColor (CColor(1.0, 1.0, 1.0));
+            CDraw::drColor (CColor(0.93, 0.93, 0.93));
             if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
             if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
+            glVertex2f(0, ySize);
+            glVertex2f(xKeySize, ySize);
+            glVertex2f(xKeySize, 0);
+            glVertex2f(0, 0);
+            glEnd();
+
+            // outline so white keys stay visible against the white background
+            CDraw::drColor (CColor(0.0, 0.0, 0.0));
+            glLineWidth(1.0f);
+            glBegin(GL_LINE_LOOP);
             glVertex2f(0, ySize);
             glVertex2f(xKeySize, ySize);
             glVertex2f(xKeySize, 0);

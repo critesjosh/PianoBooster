@@ -773,13 +773,13 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
                 float early = static_cast<float>(Cfg::playZoneEarly()) * HORIZONTAL_SPACING_FACTOR;
                 float late = static_cast<float>(Cfg::playZoneLate()) * HORIZONTAL_SPACING_FACTOR;
                 //glColor3f (0.7f, 1.0f, 0.7f);
-                glColor3f (0.0f, 0.0f, 0.3f);
+                glColor3f (0.85f, 0.90f, 1.0f);
                 glRectf(x-late, topY, x + early, bottomY);
                 glLineWidth (2.0f);
-                glColor3f (0.0f, 0.0f, 0.8f);
+                glColor3f (0.20f, 0.45f, 0.95f);
                 oneLine(x, topY, x, bottomY );
                 glLineWidth (1.0f);
-                glColor3f (0.0f, 0.0f, 0.6f);
+                glColor3f (0.55f, 0.70f, 0.95f);
                 oneLine(x-late, topY, x-late, bottomY );
                 oneLine(x+early, topY, x+early, bottomY );
             }
@@ -800,7 +800,7 @@ void CDraw::drawSymbol(CSymbol symbol, float x, float y, CSlot* slot)
         {
             auto pianistX = static_cast<float>(symbol.getPianistTiming());
             pianistX =  x + pianistX * HORIZONTAL_SPACING_FACTOR;
-            drColor(CColor(1.0, 1.0, 1.0));
+            drColor(CColor(0.85, 0.10, 0.10));
             glLineWidth (2.0f);
             glBegin(GL_LINES);
             glVertex2f( 4.0f + pianistX, 4.0f + y);

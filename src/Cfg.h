@@ -92,20 +92,20 @@ public:
     static CColor menuColor()        {return CColor(0.1, 0.6, 0.6);}
     static CColor menuSelectedColor(){return CColor(0.7, 0.7, 0.1);}
 
-    static CColor staveColor()           {return CColor(0.1, 0.7, 0.1);} // green
-    static CColor staveColorDim()        {return CColor(0.15, 0.40, 0.15);} // grey
-    static CColor noteColor()            {return CColor(0.1, 0.9, 0.1);} // green
-    static CColor noteColorDim()         {return CColor(0.25, 0.45, 0.25);} // green
-    //static CColor playedGoodColor()    {return CColor(0.6, 0.6, 1.0);} // grey
-    static CColor playedGoodColor()      {return CColor(0.5, 0.6, 1.0);} // purple 0.6, 0.6, 1.0
-    static CColor playedBadColor()       {return CColor(0.8, 0.3, 0.8);} // orange 0.7, 0.0, 0.0
-    static CColor playedStoppedColor()   {return CColor(1.0, 0.8, 0.0);} // bright orange
-    static CColor backgroundColor()      {return CColor(0.0, 0.0, 0.0);} // black
-    static CColor barMarkerColor()       {return CColor(0.3, 0.25, 0.25);} // grey
-    static CColor beatMarkerColor()      {return CColor(0.25, 0.2, 0.2);} // grey
+    // Sheet-music palette: white background with black staff/notes.
+    static CColor staveColor()           {return CColor(0.0, 0.0, 0.0);} // black staff lines
+    static CColor staveColorDim()        {return CColor(0.50, 0.50, 0.50);} // grey (inactive hand)
+    static CColor noteColor()            {return CColor(0.0, 0.0, 0.0);} // black notes
+    static CColor noteColorDim()         {return CColor(0.58, 0.58, 0.58);} // grey (inactive hand)
+    static CColor playedGoodColor()      {return CColor(0.10, 0.45, 0.90);} // blue (played correctly)
+    static CColor playedBadColor()       {return CColor(0.85, 0.10, 0.55);} // magenta/red (wrong)
+    static CColor playedStoppedColor()   {return CColor(0.90, 0.45, 0.0);} // orange (waiting)
+    static CColor backgroundColor()      {return CColor(1.0, 1.0, 1.0);} // white (sheet music)
+    static CColor barMarkerColor()       {return CColor(0.55, 0.55, 0.60);} // grey bar lines
+    static CColor beatMarkerColor()      {return CColor(0.70, 0.70, 0.74);} // faint beat lines
     static CColor pianoGoodColor()      {return playedGoodColor();}
-    static CColor pianoBadColor()       {return CColor(1.0, 0.0, 0.0);}
-    static CColor noteNameColor()       {return CColor(1.0, 1.0, 1.0);}
+    static CColor pianoBadColor()       {return CColor(0.85, 0.0, 0.0);}
+    static CColor noteNameColor()       {return CColor(0.15, 0.15, 0.15);}
 
     static void setDefaults() {
     #ifdef _WIN32

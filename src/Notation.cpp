@@ -224,7 +224,7 @@ void CNotation::calculateScoreNoteLength()
 
         if (midiDuration < cfg_param[NOTATE_semiquaverBoundary] )
             symbol->setNoteLength(PB_SYMBOL_semiquaver);
-        if (midiDuration < cfg_param[NOTATE_quaverBoundary] )
+        else if (midiDuration < cfg_param[NOTATE_quaverBoundary] )
             symbol->setNoteLength(PB_SYMBOL_quaver);
         else if (midiDuration < cfg_param[NOTATE_crotchetBoundary] )
             symbol->setNoteLength(PB_SYMBOL_crotchet);
