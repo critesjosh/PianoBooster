@@ -152,7 +152,7 @@ void CScore::drawPianoKeyboard(){
             glTranslatef(Cfg::staveStartX() + xPlaceSize * static_cast<float>(i++), yStart, 0.0f);
 
             CDraw::drColor (CColor(0.93, 0.93, 0.93));
-            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::noteColor());
+            if(state[k]==1) CDraw::drColor(stopped ? Cfg::playedStoppedColor() : Cfg::playedGoodColor());
             if(state[k]==2) CDraw::drColor(Cfg::playedBadColor());
             glBegin(GL_QUADS);
             glVertex2f(0, ySize);
